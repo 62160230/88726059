@@ -1,0 +1,60 @@
+<center>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guess The Number</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    
+    </head>
+
+<body>
+    <div class="container-fluid">
+        <br><h1>Guess The Number</h1><hr><br><br>
+
+<input tuye="text" placeholder="What do you think" id="number">
+<button onclick="guess()">Guess</button>
+<div id="hist"></div>
+<div  id="result"></div> 
+
+<br><br>
+<button onclick="over()">Start Over</button>
+<script>
+    rn = Math.floor(Math.random()*100);
+    //document.write(rn);
+
+
+    function guess() {
+        hist = document.getElementById('hist');
+        number = document.getElementById('number');
+        hist.innerHTML = hist.innerHTML+number.value +" "
+
+        result = document.getElementById('result');
+
+            if(number.value > rn){
+                result.innerHTML = "มากไป"; 
+            }else if(number.value < rn){
+                result.innerHTML = "น้อยไป"; 
+            }else {
+                result.innerHTML = "ถูกต้อง"; 
+            } 
+    }
+
+    function over() {
+        hist = document.getElementById('hist');
+        number = document.getElementById('number');
+        result = document.getElementById('result');
+        hist.innerHTML = " "
+        result.innerHTML = " "
+        number.value = " "
+        rn = Math.floor(Math.random()*100);
+        //document.write(rn);
+    }
+</script>
+</div>
+</body>
+</center>
+</html>
+
+
